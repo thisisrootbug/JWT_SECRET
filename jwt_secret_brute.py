@@ -30,7 +30,7 @@ if __name__ == "__main__":
             decoded = jwt.decode(token,key=secret.strip(),algorithm=algo)
             sys.stdout.write(GREEN+"[+] Secret Found  "+secret+RESET+"\n"+str(decoded))
             sys.stdout.flush()
-            break
+            sys.exit(0)
         except Exception as ops:
             # in case of wrong secret show status
             if(counter % 100 == 0):
